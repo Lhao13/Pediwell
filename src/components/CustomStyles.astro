@@ -1,0 +1,124 @@
+---
+import '@fontsource-variable/inter';
+---
+
+<style is:inline>
+  /* Import Google Fonts for body text. */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+  :root {
+    /* Tipografías */
+    --aw-font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    --aw-font-serif: Georgia, 'Times New Roman', Times, serif;
+    --aw-font-heading: 'George Town', Georgia, 'Times New Roman', serif;
+
+    /* Design Tokens — Marca PediWell (.agents/skills/general-instructions.md) */
+    --terracota: #e2a996; /* CTAs, acentos, links activos, íconos */
+    --arena: #ffe7d7; /* fondos de sección alterna */
+    --marron: #7f655e; /* texto de énfasis, headers, footer, franjas oscuras */
+    --rosa: #e0b6a5; /* formas decorativas, hover, quote marks */
+    --gris: #919191; /* texto secundario, metadatos */
+    --fondo-base: #fffaf6; /* fondo general del body — NUNCA #FFFFFF puro */
+    --ink: #3a2e2b; /* texto de cuerpo por defecto */
+
+    /* Paleta principal mapeada */
+    --aw-color-primary: var(--terracota); /* #e2a996 */
+    --aw-color-secondary: var(--arena); /* #ffe7d7 */
+    --aw-color-accent: #c48776; /* acentos / botones */
+
+    /* Colores secundarios */
+    --aw-color-secondary-dark: var(--marron); /* #7f655e */
+    --aw-color-secondary-mid: var(--rosa); /* #e0b6a5 */
+    --aw-color-secondary-light: var(--arena); /* #ffe7d7 */
+
+    /* Complementarios / texto */
+    --aw-color-neutral: var(--gris); /* #919191 */
+    --aw-color-white: #ffffff;
+    --aw-color-dark: var(--ink); /* #3a2e2b */
+
+    /* AW variables used by Tailwind utilities in the project */
+    --aw-color-text-heading: var(--ink);
+    --aw-color-text-default: var(--ink);
+    --aw-color-text-muted: rgb(145 145 145 / 80%);
+    --aw-color-bg-page: var(--fondo-base); /* #fffaf6 */
+
+    ::selection {
+      background-color: var(--aw-color-secondary);
+      color: var(--aw-color-dark);
+    }
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  /* Personalizaciones del Footer */
+  footer {
+    background-color: var(--aw-color-secondary-dark);
+    color: #f2d9cb;
+    border-top-color: rgba(0, 0, 0, 0.15);
+    font-size: 0.95rem;
+  }
+
+  footer .text-sm {
+    font-size: 0.95rem;
+  }
+
+  footer .font-medium,
+  footer .font-bold,
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer h6 {
+    color: var(--aw-color-primary);
+    font-size: 1.1rem;
+  }
+
+  footer,
+  footer a,
+  footer .text-muted,
+  footer li,
+  footer p,
+  footer span,
+  footer div {
+    color: #f2d9cb;
+  }
+
+  footer a:hover,
+  footer a.text-muted:hover {
+    color: #ffffff;
+    background-color: transparent;
+  }
+
+  /* Local font-face registrations (files provided in src/assets/fonts/) */
+  @font-face {
+    font-family: 'George Town';
+    src: url('/src/assets/fonts/GeorgeTown Display/TTF/GeorgeTown-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'George Town';
+    src: url('/src/assets/fonts/GeorgeTown Display/TTF/GeorgeTown-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bochan';
+    src: url('/src/assets/fonts/bochan_serif/Bochan Serif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Update heading font-family to use local fonts */
+  :root {
+    --aw-font-heading: 'George Town', Georgia, 'Times New Roman', serif;
+  }
+</style>

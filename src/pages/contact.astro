@@ -1,0 +1,55 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Map from '~/components/widgets/Map.astro';
+
+const metadata = {
+  title: 'Contacto',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contacto" title="¡Hablemos de tu próximo proyecto!" />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="¡Estamos aquí para ayudarte!"
+    items={[
+      {
+        title: 'Soporte General',
+        description: `Consultas sobre el estado de tus proyectos en curso, dudas de facturación o preguntas generales sobre cómo trabajamos.`,
+      },
+      {
+        title: 'Asesoría y Ventas',
+        description:
+          'Preguntas sobre tarifas, presupuestos personalizados, tiempos de entrega y el alcance de nuestros servicios de desarrollo.',
+      },
+      {
+        title: 'Soporte Técnico',
+        description:
+          'Para reportar cualquier inconveniente con sitios web que hayamos desplegado o solicitar pequeños ajustes y optimizaciones.',
+      },
+      {
+        title: 'Teléfono',
+        description: '+34 900 000 000',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Correo Electrónico',
+        description: 'hola@tudominio.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Ubicación',
+        description: 'Madrid, España (Servicio Remoto y Global)',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Map />
+</Layout>

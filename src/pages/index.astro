@@ -1,0 +1,301 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import DarkBand from '~/components/widgets/DarkBand.astro';
+import ServiceCards from '~/components/widgets/ServiceCards.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Map from '~/components/widgets/Map.astro';
+
+import nudo from '~/assets/images/nudo2.svg?url';
+import pata from '~/assets/images/pata.webp?url';
+import logoPedi from '~/assets/images/logo pedi.svg?url';
+
+const metadata = {
+  title: 'Clínica Podológica — Salud y bienestar para tus pies',
+  description:
+    'Clínica podológica especializada en quiropodia, pie diabético, plantillas a medida y podología deportiva. Diagnóstico preciso y trato cercano.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <section
+    class="relative isolate overflow-hidden bg-[#f3d8c5] h-[100vh] max-h-[1100px] min-h-[600px] flex items-center justify-center"
+  >
+    <img
+      src={nudo}
+      alt="Decoración de fondo"
+      class="hero-deco pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60"
+    />
+
+    <img
+      src={pata}
+      alt="Pie y planta del pie en tratamiento podológico"
+      class="hero-pie pointer-events-none absolute inset-y-0 left-0 z-10 w-2/3 object-contain opacity-90"
+    />
+
+    <!-- Overlay / Fader negro transparente de izquierda a derecha -->
+    <div
+      class="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-black/70 via-black/10 to-transparent intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade animate-[slideInRight]"
+    >
+    </div>
+
+    <div
+      class="relative z-20 mx-auto flex h-full w-full items-stretch justify-between px-6 sm:px-10 lg:px-16 py-8 md:py-12 max-w-7xl"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-16 items-stretch w-full h-full py-4">
+        <!-- Columna 1: Parte superior izquierda (más ancha: 7 de 12 columnas) -->
+        <div
+          class="md:col-span-7 flex flex-col items-start justify-start text-left max-w-2xl z-20 self-start pt-4 md:pt-8 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade animate-[slideInLeft]"
+        >
+          <span class="text-base sm:text-lg font-bold tracking-wide uppercase text-[#e0b6a5] mb-2">
+            Clínica podológica premium · Cumbayá
+          </span>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#ffffff] leading-tight mb-4">
+            Tus pies merecen el mismo cuidado que le das al resto de tu cuerpo
+          </h1>
+          <p class="text-xl sm:text-2xl text-[#dfcfc7] mb-8 font-medium leading-relaxed">
+            Tratamientos especializados en profilaxis, hongos y uñas encarnadas, con un equipo que te trata como
+            persona, no como un turno más.
+          </p>
+          <div class="hero-buttons flex flex-wrap gap-4 items-center">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center rounded-full bg-[#CEAB9D] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#CEAB9D]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c49886]"
+            >
+              Reservar citas
+            </a>
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-[#25D366] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20ba5a]"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Parte inferior derecha (5 de 12 columnas) -->
+        <div class="md:col-span-5 flex flex-col justify-end items-end w-full z-20 self-end pb-2 md:pb-6">
+          <img
+            src={logoPedi}
+            alt="Logo Pediwell"
+            class="hero-logo max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg w-2/3 h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-logo {
+      animation: fadeIn 1.2s ease-out 0.25s both;
+      transition: transform 300ms ease-in-out;
+      cursor: pointer;
+    }
+
+    .hero-buttons {
+      position: relative;
+      z-index: 30;
+    }
+
+    .hero-pie {
+      animation: slideInLeft 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      transition:
+        transform 300ms ease-in-out,
+        filter 300ms ease-in-out;
+      cursor: pointer;
+    }
+
+    .hero-deco {
+      animation: slideInRight 1.1s ease-out 0.15s both;
+      transition:
+        transform 300ms ease-in-out,
+        opacity 300ms ease-in-out;
+      cursor: pointer;
+    }
+
+    .hero-pie:hover,
+    .hero-logo:hover,
+    .hero-deco:hover {
+      transform: scale(1.03);
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-80px) scale(0.92);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(60px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-pie {
+        left: -25%;
+        width: 130vw;
+        max-width: none;
+      }
+    }
+  </style>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Años de Experiencia', amount: '10+' },
+      { title: 'Paciente Atendidos', amount: '2000+' },
+      { title: 'Satisfaccion Promedio', amount: '4.9 ⭐' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-[#f3d8c5]"></div>
+    </Fragment>
+  </Stats>
+
+  <!-- Content Widget ************** -->
+
+  <Content
+    id="about-me"
+    columns={0}
+    items={[]}
+    image={{
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSuPReEX0xxDwW6gNSH5jonNsQQjx2e54PVTLVv2pYjzcpAX0OxMOfRI&s=10' /*imagen de prueba*/,
+      alt: 'Especialista podológica en Pediwell',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-muted font-medium mb-2">Quienes Somos</p>
+      <h2 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl mb-4 font-heading">
+        Rigor profesional, trato humano
+      </h2>
+      <p class="text-muted text-lg mb-4">
+        En PediWell creemos que el cuidado de tus pies va más allá de un tratamiento: es bienestar, movilidad y
+        confianza en cada paso. Combinamos un equipo colegiado encon una atención cercana, donde te conocemos por tu
+        nombre - no por un número de turno.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- DarkBand / Commitment Widget ****************** -->
+
+  <DarkBand
+    tagline="NUESTRO COMPROMISO"
+    title="Rigor clínico y calidez humana en cada visita — así medimos lo que hacemos"
+    stats={[
+      { title: 'Pacientes que regresan', amount: '98%' },
+      { title: 'Instrumental esterilizado', amount: '100%' },
+      { title: 'Tratamientos insignia', amount: '3' },
+    ]}
+  />
+
+  <!--Servicard WIDGET ***************** -->
+
+  <ServiceCards
+    tagline="LO QUE MÁS PIDEN NUESTROS PACIENTES"
+    title="Tres tratamientos, una misma dedicación"
+    items={[
+      {
+        title: 'Profilaxis Podal',
+        description: 'Prevención y cuidado regular para pies siempre saludables.',
+        image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=600&q=80',
+        link: '/servicios',
+        linkText: 'Conocer más →',
+      },
+      {
+        title: 'Tratamiento de Hongos',
+        description: 'Recupera uñas sanas con protocolos especializados.',
+        image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80',
+        link: '/servicios',
+        linkText: 'Conocer más →',
+      },
+      {
+        title: 'Uñas Encarnadas',
+        description: 'Alivio inmediato, tratamiento profesional y sin dolor.',
+        image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=600&q=80',
+        link: '/servicios',
+        linkText: 'Conocer más →',
+      },
+    ]}
+  />
+
+  <!--Testimonials WIDGET ***************** -->
+
+  <section class="bg-(--aw-color-secondary) py-16">
+    <Testimonials
+      id="testimonials"
+      tagline="Testimonios"
+      title="Lo que dicen quienes ya nos visitaron"
+      subtitle=""
+      testimonials={[
+        {
+          title: '',
+          testimonial:
+            'Excelente atención, el tratamiento para mi uña encarnada fue rápido y sin dolor. Muy recomendados',
+          name: '- María F.',
+          job: 'Cliente satisfecho',
+          image: '',
+          rating: 5,
+        },
+        {
+          title: '',
+          testimonial: 'El equipo es súper cercano y profesional. Se nota la diferencia desde que entras a la clínica',
+          name: '- Andrés P.',
+          job: 'Cliente feliz',
+          image: '',
+          rating: 4,
+        },
+        {
+          title: '',
+          testimonial: 'Voy cada dos meses a mi sesión de profilaxis y siempre salgo feliz. 100% recomendado.',
+          name: '- Carolina S.',
+          job: 'Cliente frecuente',
+          image: '',
+          rating: 5,
+        },
+      ]}
+    />
+  </section>
+
+  <!--Map WIDGET ***************** -->
+
+  <Map />
+
+  <!-- Section ************** -->
+  <section
+    class="w-full px-4 py-50 flex flex-col items-center text-center bg-no-repeat bg-top bg-cover intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    style="background-image: url('/src/assets/images/pata-fondorosa.webp');"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Listo para darle a tus pies el cuidado que merecen?</h2>
+    <a
+      href="/contact"
+      class="inline-block px-8 py-3 bg-[var(--aw-color-primary)] text-white rounded-full hover:bg-[var(--aw-color-accent)] transition-colors duration-300"
+      >Reservar cita</a
+    >
+  </section>
+</Layout>

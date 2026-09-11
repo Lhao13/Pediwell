@@ -1,0 +1,64 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+export interface StatItem {
+  amount: string;
+  title: string;
+}
+
+export interface Props {
+  tagline?: string;
+  title?: string;
+  stats?: Array<StatItem>;
+  id?: string;
+}
+
+const {
+  tagline = 'NUESTRO COMPROMISO',
+  title = 'Rigor clínico y calidez humana en cada visita — así medimos lo que hacemos',
+  stats = [
+    { amount: '98%', title: 'Pacientes que regresan' },
+    { amount: '100%', title: 'Instrumental esterilizado' },
+    { amount: '3', title: 'Tratamientos insignia' },
+  ],
+  id,
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} containerClass="max-w-7xl mx-auto py-16 md:py-24 text-center">
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-[#7f655e] overflow-hidden">
+      <!-- Círculos orgánicos decorativos de fondo -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-white/5 pointer-events-none"></div>
+      <div class="absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full bg-[#e0b6a5]/10 pointer-events-none">
+      </div>
+    </div>
+  </Fragment>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4">
+    {tagline && <p class="text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-[#e0b6a5] mb-4">{tagline}</p>}
+
+    {
+      title && (
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight font-heading mb-14 max-w-3xl mx-auto">
+          {title}
+        </h2>
+      )
+    }
+
+    {
+      stats && stats.length > 0 && (
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 items-center justify-center">
+          {stats.map(({ amount, title: statTitle }) => (
+            <div class="flex flex-col items-center justify-center text-center">
+              <span class="text-5xl sm:text-6xl md:text-7xl font-extrabold font-['Bocha'] text-[#e0b6a5] tracking-tight mb-2">
+                {amount}
+              </span>
+              <span class="text-sm sm:text-base font-medium text-[#f2d9cb]/90 max-w-[200px]">{statTitle}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</WidgetWrapper>

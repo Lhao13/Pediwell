@@ -1,0 +1,16 @@
+---
+import { UI } from 'astrowind:config';
+
+// TODO: This code is temporary
+---
+
+<script is:inline define:vars={{ defaultTheme: UI.theme || 'light' }}>
+  function applyTheme() {
+    document.documentElement.classList.remove('dark');
+    if (typeof localStorage !== 'undefined') {
+      localStorage.theme = 'light';
+    }
+  }
+
+  applyTheme();
+</script>
