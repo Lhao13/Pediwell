@@ -36,7 +36,7 @@
 }
 
 @utility bg-dark {
-  background-color: var(--aw-color-bg-page);
+  background-color: var(--aw-color-bg-page-dark);
 }
 
 @utility bg-light {
@@ -52,7 +52,7 @@
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center rounded-full border-[var(--aw-color-secondary-mid)] border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-[var(--aw-color-accent)] focus:ring-offset-[var(--aw-color-secondary-light)] focus:ring-2 focus:ring-offset-2 hover:bg-[var(--aw-color-secondary-light)] hover:border-[var(--aw-color-secondary-mid)] dark:text-[var(--aw-color-text-muted)] dark:border-[var(--aw-color-bg-page)] dark:hover:bg-[var(--aw-color-bg-page)] dark:hover:border-[var(--aw-color-secondary-dark)] cursor-pointer;
+  @apply inline-flex items-center justify-center rounded-full border-[var(--aw-color-secondary-mid)] border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-[var(--aw-color-accent)] focus:ring-offset-[var(--aw-color-secondary-light)] focus:ring-2 focus:ring-offset-2 hover:bg-[var(--aw-color-secondary-light)] hover:border-[var(--aw-color-secondary-mid)] dark:text-[var(--aw-color-text-muted)] dark:border-[var(--aw-color-bg-page-dark)] dark:hover:bg-[var(--aw-color-bg-page-dark)] dark:hover:border-[var(--aw-color-secondary-dark)] cursor-pointer;
 }
 
 @utility btn-primary {
@@ -67,8 +67,13 @@
   @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
 }
 
-#header.scroll > div:first-child {
-  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
+#header {
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+#header.scroll {
+  background-color: #ffe7d7;
   box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
 }
 

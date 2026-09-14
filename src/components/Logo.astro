@@ -1,9 +1,11 @@
 ---
 import { SITE } from 'astrowind:config';
+import favicon from '~/assets/favicons/favicon.svg?url';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap"
->
-  {SITE?.name}
-</span>
+<div class="flex items-center gap-2.5">
+  <img src={favicon} alt="PediWell favicon" class="h-8 w-8 shrink-0 object-contain md:h-9 md:w-9" />
+  <span class="self-center text-2xl font-bold whitespace-nowrap text-gray-900 md:text-xl">
+    {SITE?.name}
+  </span>
+</div>

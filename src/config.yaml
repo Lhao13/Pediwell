@@ -1,6 +1,6 @@
 site:
   name: PediWell
-  site: 'https://astrowind.vercel.app'
+  site: 'https://pediwell.com'
   base: '/'
   trailingSlash: false
 
@@ -11,14 +11,14 @@ metadata:
   title:
     default: PediWell
     template: '%s — PediWell'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "PediWell es un centro especializado en el cuidado de los pies, ofreciendo servicios de profilaxis podal, tratamiento de hongos y atención a uñas encarnadas. Nuestro objetivo es proporcionar soluciones efectivas y personalizadas para mantener la salud y el bienestar de tus pies."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Test
+    site_name: PediWell
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/logo-pedi.svg'
         width: 1200
         height: 628
     type: website

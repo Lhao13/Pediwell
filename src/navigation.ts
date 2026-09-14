@@ -1,4 +1,16 @@
+import type { CallToAction } from '~/types';
 import { getPermalink, getBlogPermalink } from './utils/permalinks';
+
+const headerActions: CallToAction[] = [
+  {
+    text: 'Reservar cita',
+    href: 'https://wa.me/593999000656',
+    target: '_blank',
+    rel: 'noopener noreferrer',
+    variant: 'primary',
+    class: 'ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto',
+  },
+];
 
 export const headerData = {
   links: [
@@ -19,7 +31,7 @@ export const headerData = {
       href: getBlogPermalink(),
     },
   ],
-  actions: [],
+  actions: headerActions,
 };
 
 export const footerData = {
