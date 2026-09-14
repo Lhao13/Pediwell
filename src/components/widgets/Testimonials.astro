@@ -4,7 +4,6 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
 import type { Testimonials as Props } from '~/types';
-import { Fragment } from 'astro:components';
 
 const {
   title = '',
@@ -36,9 +35,9 @@ const {
                 </blockquote>
               )}
               {rating && (
-                <div class="flex items-center mt-2 space-x-1 text-[var(--terracota)]">
-                  {Array.from({ length: rating }).map((_, i) => (
-                    <span>★</span>
+                <div class="mt-2 flex items-center space-x-1 text-(--terracota)">
+                  {Array.from({ length: Number(rating) }, () => (
+                    <span aria-hidden="true">★</span>
                   ))}
                 </div>
               )}
