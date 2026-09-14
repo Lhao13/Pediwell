@@ -2,7 +2,7 @@
 publishDate: 2026-09-14T00:00:00Z
 title: '¿Qué es la profilaxis podal y cada cuánto se recomienda?'
 excerpt: 'Todo sobre el tratamiento preventivo que mantiene tus pies saludables durante todo el año.'
-image: https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=2070&q=80
+image: https://images.pexels.com/photos/5619459/pexels-photo-5619459.jpeg
 tags:
   - profilaxis-podal
   - quiropodologia
@@ -24,7 +24,7 @@ La profilaxis podal es un **tratamiento médico-podológico preventivo** enfocad
 
 > **📌 En resumen:** La profilaxis podal no busca maquillar la uña ni embellecer el pie de forma superficial; su objetivo es **prevenir enfermedades, infecciones, dolor y alteraciones biomecánicas** antes de que requieran intervenciones invasivas.
 
-![Procedimiento de profilaxis podal especializada](https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80)
+![Procedimiento de profilaxis podal especializada](https://images.pexels.com/photos/5619451/pexels-photo-5619451.jpeg)
 
 ---
 

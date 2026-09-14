@@ -2,7 +2,7 @@
 publishDate: 2026-09-14T00:00:00Z
 title: 'Uñas encarnadas: cuándo ir al podólogo y cuándo esperar'
 excerpt: 'Aprende a identificar cuándo una uña encarnada necesita atención profesional inmediata y cuándo puedes realizar cuidados preventivos en casa.'
-image: https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2070&q=80
+image: https://mydr.com.au/wp-content/uploads/2020/02/AdobeStock_252766233.jpg
 tags:
   - podologia
   - pediwell

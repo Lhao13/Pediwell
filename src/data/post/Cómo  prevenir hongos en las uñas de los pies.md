@@ -2,7 +2,7 @@
 publishDate: 2026-09-14T00:00:00Z
 title: 'Cómo prevenir hongos en las uñas de los pies'
 excerpt: 'Consejos prácticos del equipo de PediWell para evitar infecciones por hongos antes de que aparezcan.'
-image: https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1613451411927-49444b8f3f2f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 tags:
   - podologia
   - pediwell
@@ -24,7 +24,7 @@ Los dermatofitos, levaduras y mohos responsables de la onicomicosis proliferan e
 
 Además, los hongos pueden introducirse fácilmente a través de microcortes en la piel adyacente a la uña, pequeñas grietas en la superficie ungueal o traumatismos repetidos producidos por el calzado.
 
-![Cuidado e higiene de los pies](https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80)
+![Cuidado e higiene de los pies](https://plus.unsplash.com/premium_photo-1661868926397-0083f0503c07?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ---
 

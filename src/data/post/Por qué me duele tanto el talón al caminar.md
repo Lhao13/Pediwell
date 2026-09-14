@@ -2,7 +2,7 @@
 publishDate: 2026-09-14T00:00:00Z
 title: '¿Por qué me duele tanto el talón al caminar?'
 excerpt: 'Descubre las causas más comunes del dolor de talón, desde la fascitis plantar hasta alteraciones biomecánicas, y por qué visitar a un podólogo es clave para volver a caminar sin dolor.'
-image: https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2070&q=80
+image: https://images.unsplash.com/photo-1434973539530-5538b4681aac?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 tags:
   - podologia
   - salud-pie
@@ -27,7 +27,7 @@ El talón está formado principalmente por el **hueso calcáneo**, el hueso más
 
 Cualquier alteración, sobrecarga o proceso inflamatorio en estas estructuras puede generar dolor agudo o crónico al caminar.
 
-![Anatomía y cuidado del pie](https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1600&q=80)
+![Anatomía y cuidado del pie](https://images.pexels.com/photos/9486779/pexels-photo-9486779.jpeg)
 
 ---
 

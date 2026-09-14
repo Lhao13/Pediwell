@@ -48,10 +48,22 @@ export const footerData = {
   ],
   secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: 'https://www.instagram.com/pediwell.ec/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
+    {
+      ariaLabel: 'Facebook',
+      icon: 'tabler:brand-facebook',
+      href: 'https://www.facebook.com/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    },
   ],
   footNote: `
-    © ${new Date().getFullYear()} Pediwell - PASEOSALUD S.A.S. Aviso de privacidad 
+    © ${new Date().getFullYear()} <a href="/aviso-de-privacidad" class="underline underline-offset-2 hover:text-[#B77E68] transition-colors">Pediwell - PASEOSALUD S.A.S. Aviso de privacidad</a>
   `,
 };
