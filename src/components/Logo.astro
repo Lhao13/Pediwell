@@ -1,11 +1,9 @@
 ---
 import { SITE } from 'astrowind:config';
-import logoPeque from '~/assets/images/logopeque.svg?url';
-
-const siteName = 'PediWell';
 ---
 
-<div class="flex items-center gap-2 whitespace-nowrap">
-  <img src={logoPeque} alt="PediWell logo" class="h-9 w-auto" />
-  <span class="self-center text-2xl font-bold text-gray-900 md:text-xl">{siteName}</span>
-</div>
+<span
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap"
+>
+  {SITE?.name}
+</span>

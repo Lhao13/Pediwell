@@ -1,0 +1,247 @@
+---
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import ServiceCards from '~/components/widgets/ServiceCards.astro';
+
+const metadata = {
+  title: 'Servicios de Podología en Cumbayá | PediWell',
+  description: 'Servicios de Podología en Cumbayá | PediWell',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Widget ******************* -->
+  <section
+    class="w-full px-4 py-20 flex flex-col items-center text-center bg-no-repeat bg-top bg-cover intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    style="background-image: url('/src/assets/images/pata-fondorosa.webp');"
+  >
+    <!-- Overlay / Fader negro transparente de izquierda a derecha -->
+    <div class="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-black/70 via-black/10 to-transparent">
+    </div>
+    <div
+      class="relative z-20 mx-auto flex h-full w-full items-stretch justify-between px-6 sm:px-10 lg:px-16 py-8 md:py-12 max-w-7xl"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-20 md:gap-16 items-stretch w-full h-full py-4">
+        <!-- Columna 1: Parte superior izquierda (más ancha: 7 de 12 columnas) -->
+        <div
+          class="md:col-span-7 flex flex-col items-start justify-start text-left max-w-2xl z-20 self-start pt-4 md:pt-8 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade animate-[slideInLeft]"
+        >
+          <span class="text-base sm:text-lg font-bold tracking-wide uppercase text-[#e0b6a5] mb-2"> Servicios </span>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#ffffff] leading-tight mb-4">
+            Encuentra el tratamiento que tus pies necesitan
+          </h1>
+          <p class="text-base sm:text-lg text-[#dfcfc7] mb-8 font-medium leading-relaxed">
+            Desde el cuidado preventivo hasta tratamientos especializados — todo con el mismo estándar profesional, para
+            toda la familia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section with background circles -->
+  <WidgetWrapper id="services-section-bg" containerClass="relative overflow-hidden py-16 md:py-20">
+    <Fragment slot="bg">
+      <div class="absolute inset-0 overflow-hidden bg-[#fffaf6]">
+        <div class="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#ffefe3] pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-[#ffefe3] pointer-events-none"></div>
+      </div>
+    </Fragment>
+
+    <div class="relative z-10 mx-auto mb-10 max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-[var(--aw-color-accent)] sm:text-base">
+        MÁS SOLICITADOS
+      </p>
+      <h2 class="font-heading text-4xl font-black tracking-tight text-[var(--aw-color-secondary-dark)] sm:text-5xl">
+        Nuestros tratamientos prioritarios
+      </h2>
+    </div>
+
+    <!-- Profilaxis Podal -->
+    <Content
+      id="profilaxis-podal"
+      columns={0}
+      items={[]}
+      isReversed={true}
+      image={{
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSuPReEX0xxDwW6gNSH5jonNsQQjx2e54PVTLVv2pYjzcpAX0OxMOfRI&s=10' /*imagen de prueba*/,
+        alt: 'Tratamiento de hongos en uñas - PediWell',
+      }}
+      callToAction={{
+        text: 'Agendar profilaxis →',
+        href: '/contact' /* Cambiar despues */,
+        variant: 'primary',
+      }}
+    >
+      <Fragment slot="content">
+        <h2 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl mb-4 font-heading">Profilaxis Podal</h2>
+        <p class="text-muted text-lg mb-4">
+          Prevención y cuidado regular para pies siempre saludables. Eliminamos callosidades y durezas antes de que se
+          conviertan en un problema, con instrumental especializado y un enfoque personalizado.
+        </p>
+      </Fragment>
+    </Content>
+
+    <!-- Tratamiento de Hongos -->
+    <Content
+      id="tratamiento-hongos"
+      columns={0}
+      items={[]}
+      image={{
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSuPReEX0xxDwW6gNSH5jonNsQQjx2e54PVTLVv2pYjzcpAX0OxMOfRI&s=10' /*imagen de prueba*/,
+        alt: 'Tratamiento de hongos en uñas - PediWell',
+      }}
+      callToAction={{
+        text: 'Agendar diagnóstico →',
+        href: '/contact' /* Cambiar despues */,
+        variant: 'primary',
+      }}
+    >
+      <Fragment slot="content">
+        <h2 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl mb-4 font-heading">
+          Tratamiento de Hongos
+        </h2>
+        <p class="text-muted text-lg mb-4">
+          Diagnosticamos el tipo de infección y aplicamos un protocolo adaptado a la severidad de cada caso, con
+          seguimiento hasta la recuperación completa de tus uñas.
+        </p>
+      </Fragment>
+    </Content>
+
+    <!-- Uñas Encarnadas -->
+    <Content
+      id="unas-encarnadas"
+      columns={0}
+      items={[]}
+      isReversed={true}
+      image={{
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSuPReEX0xxDwW6gNSH5jonNsQQjx2e54PVTLVv2pYjzcpAX0OxMOfRI&s=10' /*imagen de prueba*/,
+        alt: 'Tratamiento de hongos en uñas - PediWell',
+      }}
+      callToAction={{
+        text: 'Agendar cita →',
+        href: '/contact' /* Cambiar despues */,
+        variant: 'primary',
+      }}
+    >
+      <Fragment slot="content">
+        <h2 class="text-3xl font-bold tracking-tight text-heading sm:text-4xl mb-4 font-heading">Uñas Encarnadas</h2>
+        <p class="text-muted text-lg mb-4">
+          Resolvemos el problema desde la raíz, con técnicas que evitan la recurrencia y priorizan tu comidad. Alivio
+          inmediato, sin dolor, desde la primera sesión.
+        </p>
+      </Fragment>
+    </Content>
+  </WidgetWrapper>
+
+  <!-- ServiceCards Widget ****************** -->
+  <div class="relative bg-[#fef5ee] py-16 md:py-20">
+    <div class="absolute inset-0 bg-[#ffe7d7]" aria-hidden="true"></div>
+    <div class="relative z-10">
+      <ServiceCards
+        tagline="CATÁLOGO COMPLETO"
+        title="Todos nuestros servicios"
+        items={[
+          {
+            title: 'Podología General',
+            description: 'Revisión completa, corte y fresado de uñas para una salud podal óptima.',
+            image:
+              'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80',
+          },
+          {
+            title: 'Quiropodia',
+            description: 'Eliminación indolora de callosidades y helomas con instrumental estéril.',
+            image:
+              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80',
+          },
+          {
+            title: 'Pie Diabético',
+            description: 'Control preventivo y curas especializadas para pacientes diabéticos.',
+            image:
+              'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80',
+          },
+          {
+            title: 'Plantillas a Medida',
+            description: 'Estudio biomecánico de la pisada y soportes plantares personalizados.',
+            image:
+              'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80',
+          },
+          {
+            title: 'Podología Deportiva',
+            description: 'Prevención y tratamiento de lesiones por sobrecarga y fascitis plantar.',
+            image:
+              'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80',
+          },
+          {
+            title: 'Atención a Domicilio',
+            description: 'Servicio en casa para personas mayores o con movilidad reducida.',
+            image:
+              'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80',
+          },
+        ]}
+      />
+    </div>
+
+
+    
+    
+  </div>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Nuestros Valores"
+    subtitle="La base sobre la cual construimos cada línea de código y cada relación con nuestros clientes."
+    items={[
+      {
+        title: 'Enfoque en el Cliente',
+        description:
+          'Tus metas de negocio son nuestra prioridad. Trabajamos en estrecha colaboración para asegurar que el resultado final supere tus expectativas.',
+      },
+      {
+        title: 'Mejora Continua',
+        description:
+          'El ecosistema web evoluciona rápido y nosotros también. Implementamos constantemente las mejores y más modernas prácticas de la industria.',
+      },
+      {
+        title: 'Transparencia',
+        description:
+          'Mantenemos una comunicación clara y honesta durante todas las etapas de desarrollo del proyecto, sin sorpresas ni costes ocultos.',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Nuestra Filosofía de Trabajo"
+    subtitle="Creemos en el trabajo bien hecho y en la entrega de valor constante en cada fase del desarrollo."
+    isReversed={true}
+    callToAction={{
+      text: 'Ver proyectos',
+      href: '/blog',
+    }}
+    items={[
+      {
+        title: 'Trabajo Remoto y Colaborativo',
+        description:
+          'Colaboramos en entornos distribuidos de forma ágil y coordinada para optimizar los tiempos de entrega.',
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Atención al Detalle',
+        description:
+          'Desde el contraste de colores hasta la accesibilidad web, cuidamos cada elemento técnico y estético.',
+        icon: 'tabler:message-star',
+      },
+      {
+        title: 'Pasión por la Calidad',
+        description:
+          'No nos conformamos con que funcione; buscamos la máxima eficiencia en rendimiento y el código más limpio posible.',
+        icon: 'tabler:award',
+      },
+    ]}
+  />
+</Layout>
