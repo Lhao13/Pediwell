@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Content from '~/components/widgets/Content.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import ServiceCards from '~/components/widgets/ServiceCards.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = {
   title: 'Servicios de Podología en Cumbayá | PediWell',
@@ -184,64 +185,41 @@ const metadata = {
       />
     </div>
 
-
-    
+    <FAQs
+      title="Resolvemos tus dudas"
+      subtitle="Preguntas frecuentes"
+      items={[
+        {
+          title: '¿Cuánto dura una sesión?',
+          description: 'Depende del tratameiento, pero la mayoría de las sesiones duran entre 30 y 45 minutos.',
+          icon: 'tabler:clock',
+        },
+        {
+          title: '¿Necesito referencia médica?',
+          description: 'No, puedes agendar directamente con nosotros para cualquier de nuestros servicios',
+          icon: 'tabler:stethoscope',
+        },
+        {
+          title: '¿Aceptan seguros?',
+          description:
+            'Consulta por Whatsapp - te confirmamos convenios vigentes segun tu aseguradora',
+          icon: 'tabler:key',
+        },
+      ]}
+    />
     
   </div>
 
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Nuestros Valores"
-    subtitle="La base sobre la cual construimos cada línea de código y cada relación con nuestros clientes."
-    items={[
-      {
-        title: 'Enfoque en el Cliente',
-        description:
-          'Tus metas de negocio son nuestra prioridad. Trabajamos en estrecha colaboración para asegurar que el resultado final supere tus expectativas.',
-      },
-      {
-        title: 'Mejora Continua',
-        description:
-          'El ecosistema web evoluciona rápido y nosotros también. Implementamos constantemente las mejores y más modernas prácticas de la industria.',
-      },
-      {
-        title: 'Transparencia',
-        description:
-          'Mantenemos una comunicación clara y honesta durante todas las etapas de desarrollo del proyecto, sin sorpresas ni costes ocultos.',
-      },
-    ]}
-  />
-
-  <!-- Steps2 Widget ****************** -->
-
-  <Steps2
-    title="Nuestra Filosofía de Trabajo"
-    subtitle="Creemos en el trabajo bien hecho y en la entrega de valor constante en cada fase del desarrollo."
-    isReversed={true}
-    callToAction={{
-      text: 'Ver proyectos',
-      href: '/blog',
-    }}
-    items={[
-      {
-        title: 'Trabajo Remoto y Colaborativo',
-        description:
-          'Colaboramos en entornos distribuidos de forma ágil y coordinada para optimizar los tiempos de entrega.',
-        icon: 'tabler:globe',
-      },
-      {
-        title: 'Atención al Detalle',
-        description:
-          'Desde el contraste de colores hasta la accesibilidad web, cuidamos cada elemento técnico y estético.',
-        icon: 'tabler:message-star',
-      },
-      {
-        title: 'Pasión por la Calidad',
-        description:
-          'No nos conformamos con que funcione; buscamos la máxima eficiencia en rendimiento y el código más limpio posible.',
-        icon: 'tabler:award',
-      },
-    ]}
-  />
+   <!-- Section ************** -->
+  <section
+    class="w-full px-4 py-50 flex flex-col items-center text-center bg-no-repeat bg-top bg-cover intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+    style="background-image: url('/src/assets/images/pata-fondorosa.webp');"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Cuál de estos tratamientos necesitas hoy?</h2>
+    <a
+      href="/contact"
+      class="inline-block px-8 py-3 bg-[var(--aw-color-primary)] text-white rounded-full hover:bg-[var(--aw-color-accent)] transition-colors duration-300"
+      >Reservar cita</a
+    >
+  </section>
 </Layout>
