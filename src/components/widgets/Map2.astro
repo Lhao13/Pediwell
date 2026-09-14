@@ -1,0 +1,87 @@
+---
+import Button from '~/components/ui/Button.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+export interface Props {
+  id?: string;
+  title?: string;
+  tagline?: string;
+  address?: string;
+  hours?: string;
+  reference?: string;
+  mapUrl?: string;
+  whatsappUrl?: string;
+}
+
+const {
+  id,
+  title = 'Todo lo que necesitas saber antes de tu visita',
+  tagline = 'CÓMO LLEGAR',
+  address = 'Av. Oswaldo Guayasamín S/N, Cumbayá, Quito',
+  hours = 'Lunes a domingo | 9:00 - 18:00',
+  reference = 'Pendiente – parqueadero / punto de acceso',
+  mapUrl = 'https://www.google.com/maps?q=-0.1991495,-78.436578',
+  whatsappUrl = 'https://wa.me/593999000656?text=Hola%2C%20quiero%20agendar%20una%20cita',
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} containerClass="max-w-7xl mx-auto py-12 md:py-20">
+  <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+    <div class="relative min-h-[360px] overflow-hidden rounded-[2rem] bg-[#e7d3c3] shadow-[0_18px_40px_rgba(126,102,95,0.12)] md:min-h-[420px]">
+      <iframe
+        src="https://maps.google.com/maps?q=-0.1991495,-78.436578&z=17&t=&ie=UTF8&iwloc=&output=embed"
+        class="relative z-10 h-full w-full min-h-[360px] border-0 md:min-h-[420px]"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="flex flex-col items-start justify-center text-left">
+      <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#c48776] md:text-sm">
+        {tagline}
+      </p>
+
+      <h2 class="mt-4 max-w-xl font-heading text-3xl font-black leading-tight text-[#3a2e2b] sm:text-4xl lg:text-[2.5rem]">
+        {title}
+      </h2>
+
+      <div class="mt-6 space-y-3 text-lg text-[#5a4237]">
+        <p>
+          <span class="font-semibold text-[#3a2e2b]">Dirección:</span>
+          <span class="ml-1">{address}</span>
+        </p>
+        <p>
+          <span class="font-semibold text-[#3a2e2b]">Horarios:</span>
+          <span class="ml-1">{hours}</span>
+        </p>
+        <p>
+          <span class="font-semibold text-[#3a2e2b]">Referencia:</span>
+          <span class="ml-1">{reference}</span>
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <Button
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          class="rounded-full border border-[#3a2e2b] bg-transparent px-6 py-3 text-base font-semibold text-[#3a2e2b] transition hover:bg-[#3a2e2b] hover:text-white"
+        >
+          Ver en Google Maps
+        </Button>
+
+        <Button
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          class="rounded-full bg-[#57c18a] px-6 py-3 text-base font-semibold text-white shadow-[0_12px_22px_rgba(87,193,138,0.35)] transition hover:bg-[#4dad7d]"
+        >
+          Escríbenos por WhatsApp
+        </Button>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
