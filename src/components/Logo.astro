@@ -4,8 +4,13 @@ import favicon from '~/assets/favicons/favicon.svg?url';
 ---
 
 <div class="flex items-center gap-2.5">
-  <img src={favicon} alt="PediWell favicon" class="h-8 w-8 shrink-0 object-contain md:h-9 md:w-9" />
-  <span class="self-center text-2xl font-bold whitespace-nowrap text-gray-900 md:text-xl">
-    {SITE?.name}
+  <span class="flex flex-col text-xl font-bold leading-[0.9] whitespace-nowrap md:text-2xl" aria-label={SITE?.name}>
+    <span class="text-[#9b837c]">Pedi</span>
+    <span class="text-[#ceab9d]">Well</span>
   </span>
+    <span
+    role="img"
+    aria-label="Símbolo PediWell"
+    class="h-8 w-8 shrink-0 bg-[#9b837c] md:h-9 md:w-9"
+    style={`mask-image: url('${favicon}'); mask-repeat: no-repeat; mask-position: center; mask-size: contain;`}></span>
 </div>

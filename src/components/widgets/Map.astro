@@ -1,5 +1,6 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import nudo3 from '~/assets/images/nudo3.svg?url';
 
 export interface Props {
   title?: string;
@@ -23,22 +24,33 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none bg-[#f4d7c5]">
+      <img
+        src={nudo3}
+        alt="Fondo decorativo"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </Fragment>
   <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
     <!-- Left column: Text + CTA -->
     <div class="flex flex-col gap-4">
-      {tagline && <p class="text-sm font-bold tracking-[0.15em] uppercase text-[var(--terracota)]">{tagline}</p>}
+      {tagline && <p class="text-sm font-bold tracking-[0.15em] uppercase text-[#8c6b61]">{tagline}</p>}
       {
         title && (
-          <h2 class="text-3xl md:text-4xl font-bold leading-tight font-heading text-[var(--chocolate)]">{title}</h2>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight font-heading text-[#3a2e2b]">{title}</h2>
         )
       }
-      {subtitle && <p class="text-base text-muted max-w-md">{subtitle}</p>}
+      {subtitle && <p class="text-base text-[#5d4a44] max-w-md">{subtitle}</p>}
       <div class="mt-2">
         <a
           href={`https://www.google.com/maps?q=-0.1991495,-78.436578`}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full border border-[var(--chocolate)] text-[var(--chocolate)] text-sm font-medium hover:bg-[var(--chocolate)] hover:text-white transition-colors duration-300"
+          class="inline-flex items-center gap-1 px-5 py-2.5 rounded-full border border-[#8c6b61] text-[#3a2e2b] text-sm font-semibold hover:bg-[#8c6b61] hover:text-white transition-colors duration-300"
         >
           Cómo llegar <span class="ml-1">→</span>
         </a>
@@ -59,7 +71,7 @@ const {
 
 <style>
   .map-container {
-    border: 2px solid rgba(200, 160, 140, 0.3);
-    background-color: rgba(220, 190, 170, 0.15);
+    border: 2px solid rgba(224, 182, 165, 0.3);
+    background-color: rgba(92, 69, 62, 0.5);
   }
 </style>

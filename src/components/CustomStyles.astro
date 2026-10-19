@@ -12,51 +12,54 @@ import '@fontsource-variable/inter';
     --aw-font-serif: Georgia, 'Times New Roman', Times, serif;
     --aw-font-heading: 'George Town', Georgia, 'Times New Roman', serif;
 
-    /* Design Tokens — Marca PediWell (.agents/skills/general-instructions.md) */
+    /* Design Tokens — Marca PediWell */
     --terracota: #e2a996; /* CTAs, acentos, links activos, íconos */
-    --arena: #ffe7d7; /* fondos de sección alterna */
-    --marron: #7f655e; /* texto de énfasis, headers, footer, franjas oscuras */
-    --rosa: #e0b6a5; /* formas decorativas, hover, quote marks */
-    --gris: #919191; /* texto secundario, metadatos */
-    --fondo-base: #fffaf6; /* fondo general del body — NUNCA #FFFFFF puro */
-    --ink: #3a2e2b; /* texto de cuerpo por defecto */
+    --arena: #6e554e; /* fondos de sección alterna en paleta oscura */
+    --marron: #7f655e; /* color marrón predominante en todo el proyecto */
+    --marron-oscuro: #5c453e; /* marrón profundo para contraste y bandas */
+    --marron-suave: #6e554e; /* marrón suave para tarjetas y bloques */
+    --rosa: #e0b6a5; /* formas decorativas, hover, quote marks, kickers */
+    --gris: #d5b9ad; /* texto secundario, metadatos */
+    --fondo-base: #7f655e; /* fondo general del body — #7f655e predominante */
+    --ink: #ffffff; /* texto claro para contraste */
 
     /* Paleta principal mapeada */
     --aw-color-primary: var(--terracota); /* #e2a996 */
-    --aw-color-secondary: var(--arena); /* #ffe7d7 */
+    --aw-color-secondary: var(--marron-suave); /* #6e554e */
     --aw-color-accent: #c48776; /* acentos / botones */
 
     /* Colores secundarios */
-    --aw-color-secondary-dark: var(--marron); /* #7f655e */
+    --aw-color-secondary-dark: var(--marron-oscuro); /* #5c453e */
     --aw-color-secondary-mid: var(--rosa); /* #e0b6a5 */
-    --aw-color-secondary-light: var(--arena); /* #ffe7d7 */
+    --aw-color-secondary-light: #8e736b; /* hover / estados suaves */
 
     /* Complementarios / texto */
-    --aw-color-neutral: var(--gris); /* #919191 */
+    --aw-color-neutral: var(--gris); /* #d5b9ad */
     --aw-color-white: #ffffff;
-    --aw-color-dark: var(--ink); /* #3a2e2b */
+    --aw-color-dark: var(--ink); /* #ffffff */
 
     /* AW variables used by Tailwind utilities in the project */
-    --aw-color-text-heading: var(--ink);
-    --aw-color-text-default: var(--ink);
-    --aw-color-text-muted: rgb(145 145 145 / 80%);
-    --aw-color-bg-page: var(--fondo-base); /* #fffaf6 */
+    --aw-color-text-heading: #ffffff;
+    --aw-color-text-default: #f2d9cb;
+    --aw-color-text-muted: #d5b9ad;
+    --aw-color-bg-page: var(--marron); /* #7f655e predominante */
+    --aw-color-bg-page-dark: var(--marron-oscuro); /* #5c453e */
 
     ::selection {
-      background-color: var(--aw-color-secondary);
-      color: var(--aw-color-dark);
+      background-color: var(--rosa);
+      color: #3a2e2b;
     }
   }
 
   :root {
-    color-scheme: light;
+    color-scheme: dark;
   }
 
-  /* Personalizaciones del Footer */
+  /* Personalizaciones del Footer - Conservando su color original */
   footer {
-    background-color: var(--aw-color-secondary-dark);
+    background-color: #7f655e;
     color: #f2d9cb;
-    border-top-color: rgba(0, 0, 0, 0.15);
+    border-top-color: rgba(255, 255, 255, 0.15);
     font-size: 0.95rem;
   }
 

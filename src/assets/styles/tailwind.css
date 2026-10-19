@@ -68,13 +68,21 @@
 }
 
 #header {
-  background-color: #ffffff;
-  transition: background-color 0.3s ease;
+  background-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 
 #header.scroll {
-  background-color: #ffe7d7;
+  background-color: rgb(255 255 255 / 72%);
+  backdrop-filter: blur(12px);
   box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+}
+
+#header.expanded {
+  background-color: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(12px);
 }
 
 #header.expanded nav {

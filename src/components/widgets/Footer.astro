@@ -1,10 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
-
-import logoPeque from '~/assets/images/logopeque-pediwell-negro.svg';
 
 interface Link {
   text?: string;
@@ -37,9 +34,6 @@ const { socialLinks = [], links = [], footNote = '' } = Astro.props;
       <div class="col-span-12 lg:col-span-4 flex flex-col items-start gap-3">
         <div>
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
-        </div>
-        <div>
-          <Image src={logoPeque} alt="Pediwell Logo" class="h-10 w-auto object-contain" />
         </div>
         <p class="text-sm">Clínica podológica premium en Cumbayá, Tumbaco y Puembo</p>
       </div>
@@ -83,7 +77,7 @@ const { socialLinks = [], links = [], footNote = '' } = Astro.props;
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                  {icon && <Icon name={icon} class="w-8 h-8" />}
                   <Fragment set:html={text} />
                 </a>
               </li>

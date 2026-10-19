@@ -3,6 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Map2 from '~/components/widgets/Map2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
+import pataFondo from '~/assets/images/pata-fondorosa.webp?url';
+import nudoFondo from '~/assets/images/nudo3.svg?url';
+
 const metadata = {
   title: 'Cómo Llegar y Contactar a PediWell | Cumbayá',
   description: 'Visita PediWell en Av. Oswaldo Guayasamín S/N, Cumbayá, o agenda tu cita por WhatsApp.',
@@ -10,15 +13,16 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
-    <!-- Widget ******************* -->
+  <!-- Widget ******************* -->
   <section
     class="w-full px-4 py-20 flex flex-col items-center text-center bg-no-repeat bg-top bg-cover intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-    style="background-image: url('/src/assets/images/pata-fondorosa.webp');"
+    style={`background-image: url('${pataFondo}');`}
     aria-label="Fondo de pie en tratamiento podológico"
   >
     <!-- Overlay / Fader negro transparente de izquierda a derecha -->
-    <div class="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-black/70 via-black/10 to-transparent">
+    <div
+      class="pointer-events-none absolute inset-0 z-15 bg-gradient-to-r from-[#5c453e]/50 via-[#7f655e]/10 hidden md:block"
+    >
     </div>
     <div
       class="relative z-20 mx-auto flex h-full w-full items-stretch justify-between px-6 sm:px-10 lg:px-16 py-8 md:py-12 max-w-7xl"
@@ -28,11 +32,13 @@ const metadata = {
         <div
           class="md:col-span-7 flex flex-col items-start justify-start text-left max-w-2xl z-20 self-start pt-4 md:pt-8 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade animate-[slideInLeft]"
         >
-          <span class="text-base sm:text-lg font-bold tracking-wide uppercase text-[#e0b6a5] mb-2"> Contacto y Ubicación </span>
+          <span class="text-base sm:text-lg font-bold tracking-wide uppercase text-[#e0b6a5] mb-2">
+            Contacto y Ubicación
+          </span>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#ffffff] leading-tight mb-4">
             Visitanos o escríbenos - como prefieras
           </h1>
-          <p class="text-base sm:text-2xl text-[#dfcfc7] mb-8 font-medium leading-relaxed">
+          <p class="text-base sm:text-2xl text-[#f2d9cb] mb-8 font-medium leading-relaxed">
             Av. Oswaldo Guayasamín S/N, Cumbayá, Quito, Ecuador.
           </p>
         </div>
@@ -40,44 +46,58 @@ const metadata = {
     </div>
   </section>
 
-  <Map2/>
+  <section class="relative isolate overflow-hidden bg-[#5c453e]" aria-label="Ubicación e información de contacto">
+    <div
+      class="pointer-events-none absolute inset-0 z-0 opacity-[0.12]"
+      style={`background-image: url('${nudoFondo}'); background-size: cover; background-position: center;`}
+      aria-hidden="true"
+    >
+    </div>
 
-  <Features2
-    title="PediWell en Cumbayá"
-    subtitle="Atención cercana, trato humano y cuidado profesional para tus pies."
-    items={[
-      {
-        title: 'WhatsApp',
-        description: '+593 999 000 656',
-        icon: 'tabler:brand-whatsapp',
-      },
-      {
-        title: 'Dirección',
-        description: 'Av. Oswaldo Guayasamín S/N, Cumbayá, Quito, Ecuador',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Razón social',
-        description: 'PASEOSALUD S.A.S.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Consulta general',
-        description: 'Resolvemos dudas sobre profilaxis, hongos, uñas encarnadas, plantillas y atención personalizada.',
-        icon: 'tabler:stethoscope',
-      },
-      {
-        title: 'Horarios',
-        description: 'Lunes a domingo | 9:00 - 18:00',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Citas',
-        description: 'Agenda tu visita por WhatsApp para recibir atención rápida y personalizada.',
-        icon: 'tabler:calendar-event',
-      },
-    ]}
-  />
+    <div class="relative z-10">
+      <Map2>
+        <div slot="bg" class="absolute inset-0 bg-transparent"></div>
+      </Map2>
 
-
+      <Features2
+        title="PediWell en Cumbayá"
+        subtitle="Atención cercana, trato humano y cuidado profesional para tus pies."
+        items={[
+          {
+            title: 'WhatsApp',
+            description: '+593 999 000 656',
+            icon: 'tabler:brand-whatsapp',
+          },
+          {
+            title: 'Dirección',
+            description: 'Av. Oswaldo Guayasamín S/N, Cumbayá, Quito, Ecuador',
+            icon: 'tabler:map-pin',
+          },
+          {
+            title: 'Razón social',
+            description: 'PASEOSALUD S.A.S.',
+            icon: 'tabler:building-store',
+          },
+          {
+            title: 'Consulta general',
+            description:
+              'Resolvemos dudas sobre profilaxis, hongos, uñas encarnadas, plantillas y atención personalizada.',
+            icon: 'tabler:stethoscope',
+          },
+          {
+            title: 'Horarios',
+            description: 'Lunes a domingo | 9:00 - 18:00',
+            icon: 'tabler:clock',
+          },
+          {
+            title: 'Citas',
+            description: 'Agenda tu visita por WhatsApp para recibir atención rápida y personalizada.',
+            icon: 'tabler:calendar-event',
+          },
+        ]}
+      >
+        <div slot="bg" class="absolute inset-0 bg-transparent"></div>
+      </Features2>
+    </div>
+  </section>
 </Layout>

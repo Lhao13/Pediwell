@@ -21,8 +21,8 @@ const formattedDate = new Intl.DateTimeFormat('es-EC', {
 }).format(post.publishDate);
 ---
 
-<article class="group h-full overflow-hidden rounded-[1.6rem] border border-[#d9b7a4]/60 bg-[#f9efe9] shadow-[0_16px_30px_rgba(117,87,74,0.08)] transition-transform duration-300 hover:-translate-y-1">
-  <div class="relative overflow-hidden rounded-t-[1.5rem] bg-[#d6b29c]">
+<article class="group h-full overflow-hidden rounded-[1.6rem] border border-[#e0b6a5]/25 bg-[#6e554e] shadow-[0_16px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:-translate-y-1">
+  <div class="relative overflow-hidden rounded-t-[1.5rem] bg-[#5c453e]">
     {
       image ? (
         link ? (
@@ -65,12 +65,12 @@ const formattedDate = new Intl.DateTimeFormat('es-EC', {
   </div>
 
   <div class="p-5">
-    <p class="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#5a4237]">{formattedDate}</p>
+    <p class="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#e0b6a5]">{formattedDate}</p>
 
-    <h3 class="mb-2 text-xl font-bold leading-tight text-[#3a2e2b] font-heading">
+    <h3 class="mb-2 text-xl font-bold leading-tight text-white font-heading">
       {
         link ? (
-          <a class="inline-block transition-colors duration-200 hover:text-[#c48776]" href={link}>
+          <a class="inline-block transition-colors duration-200 hover:text-[#e0b6a5]" href={link}>
             {post.title}
           </a>
         ) : (
@@ -79,6 +79,6 @@ const formattedDate = new Intl.DateTimeFormat('es-EC', {
       }
     </h3>
 
-    {post.excerpt && <p class="text-base leading-relaxed text-[#5a4237]">{post.excerpt}</p>}
+    {post.excerpt && <p class="text-base leading-relaxed text-[#f2d9cb]">{post.excerpt}</p>}
   </div>
 </article>

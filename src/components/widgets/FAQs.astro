@@ -39,12 +39,12 @@ const columnsClass =
               <div class="flex justify-center">
                 <Icon
                   name={icon || 'tabler:chevron-right'}
-                  class="flex-shrink-0 mt-1 w-6 h-6 text-primary mr-2 rtl:mr-0 rtl:ml-2"
+                  class="flex-shrink-0 mt-1 w-6 h-6 text-[#e0b6a5] mr-2 rtl:mr-0 rtl:ml-2"
                 />
               </div>
               <div class="mt-0.5">
-                {itemTitle && <h3 class="text-xl font-bold">{itemTitle}</h3>}
-                {description && <p class:list={[{ 'mt-3': itemTitle }, 'text-muted']} set:html={description} />}
+                {itemTitle && <h3 class="text-xl font-bold text-white">{itemTitle}</h3>}
+                {description && <p class:list={[{ 'mt-3': itemTitle }, 'text-[#f2d9cb]']} set:html={description} />}
                 {callToAction && (
                   <div class:list={[{ 'mt-3': itemTitle || description }]}>
                     <Button variant="link" {...callToAction} />

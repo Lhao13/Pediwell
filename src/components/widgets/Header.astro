@@ -87,7 +87,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 <>
                   <button
                     type="button"
-                    class="text-[var(--aw-color-primary)] hover:text-[var(--aw-color-accent)] px-4 py-3 flex items-center whitespace-nowrap"
+                    class="text-black hover:text-[#9b837c] px-4 py-3 flex items-center whitespace-nowrap"
                   >
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
@@ -97,7 +97,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b md:hover:bg-[var(--aw-color-secondary-light)] hover:text-[var(--aw-color-accent)] py-2 px-5 block whitespace-no-wrap',
+                            'first:rounded-t last:rounded-b text-black md:hover:bg-[var(--aw-color-secondary-light)] hover:text-[#9b837c] py-2 px-5 block whitespace-no-wrap',
                             { 'aw-link-active': href2 === currentPath },
                           ]}
                           href={href2}
@@ -111,7 +111,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'text-[var(--aw-color-primary)] hover:text-[var(--aw-color-accent)] px-4 py-3 flex items-center whitespace-nowrap',
+                    'text-black hover:text-[#9b837c] px-4 py-3 flex items-center whitespace-nowrap',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}

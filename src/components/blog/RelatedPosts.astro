@@ -20,12 +20,13 @@ const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
     <BlogHighlightedPosts
       classes={{
         container:
-          'pt-0 lg:pt-0 md:pt-0 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+          'pt-2 md:pt-2 lg:pt-2 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
       }}
       title="Artículos relacionados"
       linkText="Ver todos los artículos"
       linkUrl={getBlogPermalink()}
       postIds={relatedPosts.map((post) => post.id)}
+      bg='<div class="absolute inset-0 bg-[#7f655e]"></div>'
     />
   ) : null
 }

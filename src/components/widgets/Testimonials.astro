@@ -27,30 +27,30 @@ const {
       testimonials &&
         testimonials.map(({ title, testimonial, name, job, image, rating }) => (
           <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl bg-white">
-              {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
+            <div class="flex flex-col p-4 md:p-6 rounded-2xl shadow-xl bg-[#5c453e] border border-[#e0b6a5]/20">
+              {title && <h2 class="text-lg font-medium leading-6 pb-4 text-white">{title}</h2>}
               {testimonial && (
                 <blockquote class="flex-auto">
-                  <p class="text-muted">" {testimonial} "</p>
+                  <p class="text-[#f2d9cb]">" {testimonial} "</p>
                 </blockquote>
               )}
               {rating && (
-                <div class="mt-2 flex items-center space-x-1 text-(--terracota)">
+                <div class="mt-2 flex items-center space-x-1 text-[#e2a996]">
                   {Array.from({ length: Number(rating) }, () => (
                     <span aria-hidden="true">★</span>
                   ))}
                 </div>
               )}
-              <hr class="border-slate-200  my-4" />
+              <hr class="border-[#e0b6a5]/20 my-4" />
 
               <div class="flex items-center">
                 {image && (
-                  <div class="h-10 w-10 rounded-full border border-slate-200">
+                  <div class="h-10 w-10 rounded-full border border-[#e0b6a5]/30">
                     {typeof image === 'string' ? (
                       <Fragment set:html={image} />
                     ) : (
                       <Image
-                        class="h-10 w-10 rounded-full border border-slate-200 min-w-full min-h-full"
+                        class="h-10 w-10 rounded-full border border-[#e0b6a5]/30 min-w-full min-h-full"
                         width={40}
                         height={40}
                         layout="fixed"
@@ -62,8 +62,8 @@ const {
                 )}
 
                 <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                  {name && <p class="text-base font-semibold text-white">{name}</p>}
+                  {job && <p class="text-xs text-[#e0b6a5]">{job}</p>}
                 </div>
               </div>
             </div>
