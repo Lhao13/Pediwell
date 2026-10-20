@@ -143,7 +143,7 @@ export interface Testimonial {
   testimonial?: string;
   name?: string;
   job?: string;
-  image?: string | unknown;
+  image?: string | ImageMetadata;
   rating?: number;
 }
 

@@ -19,57 +19,74 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-none mx-auto px-0 md:px-0 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
+    <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  </div>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {
-      testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image, rating }) => (
-          <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-            <div class="flex flex-col p-4 md:p-6 rounded-2xl shadow-xl bg-[#5c453e] border border-[#e0b6a5]/20">
-              {title && <h2 class="text-lg font-medium leading-6 pb-4 text-white">{title}</h2>}
-              {testimonial && (
-                <blockquote class="flex-auto">
-                  <p class="text-[#f2d9cb]">" {testimonial} "</p>
-                </blockquote>
-              )}
-              {rating && (
-                <div class="mt-2 flex items-center space-x-1 text-[#e2a996]">
-                  {Array.from({ length: Number(rating) }, () => (
-                    <span aria-hidden="true">★</span>
-                  ))}
-                </div>
-              )}
-              <hr class="border-[#e0b6a5]/20 my-4" />
+  <div class="testimonials-carousel" role="region" aria-label="Testimonios de clientes" aria-roledescription="carrusel">
+    <div class="testimonials-track">
+      {
+        [testimonials, testimonials].map((group, groupIndex) => (
+          <div class="testimonials-group" aria-hidden={groupIndex === 1 ? 'true' : undefined}>
+            {group.map(({ title, testimonial, name, job, image, rating }) => (
+              <div class="testimonial-slide">
+                <article class="flex h-full flex-col p-4 md:p-6 rounded-2xl shadow-xl bg-[#5c453e] border border-[#e0b6a5]/20">
+                  {title && <h2 class="text-lg font-medium leading-6 pb-4 text-white">{title}</h2>}
+                  {testimonial && (
+                    <blockquote class="flex-auto">
+                      <p class="text-[#f2d9cb]">"{testimonial}"</p>
+                    </blockquote>
+                  )}
+                  {rating && (
+                    <div
+                      class="mt-2 flex items-center space-x-1 text-[#e2a996]"
+                      aria-label={`${rating} de 5 estrellas`}
+                      role="img"
+                    >
+                      {Array.from({ length: Number(rating) }, () => (
+                        <span aria-hidden="true">★</span>
+                      ))}
+                    </div>
+                  )}
+                  <hr class="border-[#e0b6a5]/20 my-4" />
 
-              <div class="flex items-center">
-                {image && (
-                  <div class="h-10 w-10 rounded-full border border-[#e0b6a5]/30">
-                    {typeof image === 'string' ? (
-                      <Fragment set:html={image} />
-                    ) : (
-                      <Image
-                        class="h-10 w-10 rounded-full border border-[#e0b6a5]/30 min-w-full min-h-full"
-                        width={40}
-                        height={40}
-                        layout="fixed"
-                        format="webp"
-                        {...image}
-                      />
+                  <div class="flex items-center">
+                    {image && (
+                      <div class="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-[#e0b6a5]/30">
+                        {typeof image === 'string' ? (
+                          <Fragment set:html={image} />
+                        ) : (
+                          <Image
+                            class="h-12 w-12 rounded-full"
+                            width={48}
+                            height={48}
+                            layout="fixed"
+                            format="webp"
+                            alt={`Reseña de ${name ?? 'cliente'}`}
+                            src={image}
+                          />
+                        )}
+                      </div>
                     )}
-                  </div>
-                )}
 
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold text-white">{name}</p>}
-                  {job && <p class="text-xs text-[#e0b6a5]">{job}</p>}
-                </div>
+                    <div class="min-w-0 grow ml-3 rtl:ml-0 rtl:mr-3">
+                      {name && <p class="break-words text-base font-semibold text-white">{name}</p>}
+                      {job && <p class="text-xs text-[#e0b6a5]">{job}</p>}
+                    </div>
+                  </div>
+                </article>
               </div>
-            </div>
+            ))}
           </div>
         ))
-    }
+      }
+    </div>
   </div>
   {
     callToAction && (
@@ -79,3 +96,73 @@ const {
     )
   }
 </WidgetWrapper>
+
+<style>
+  .testimonials-carousel {
+    container-type: inline-size;
+    overflow: hidden;
+  }
+
+  .testimonials-track {
+    display: flex;
+    width: max-content;
+    animation: testimonials-scroll 40s linear infinite;
+  }
+
+  .testimonials-carousel:hover .testimonials-track,
+  .testimonials-carousel:focus-within .testimonials-track {
+    animation-play-state: paused;
+  }
+
+  .testimonials-group {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 1.5rem;
+    padding-inline: 1.5rem;
+    width: max-content;
+  }
+
+  .testimonial-slide {
+    flex: 0 0 calc(100cqi - 3rem);
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .testimonial-slide {
+      flex-basis: calc((100cqi - 4.5rem) / 2);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonial-slide {
+      flex-basis: calc((100cqi - 6rem) / 3);
+    }
+  }
+
+  @keyframes testimonials-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonials-carousel {
+      overflow-x: auto;
+    }
+
+    .testimonials-track {
+      width: max-content;
+      animation: none;
+    }
+
+    .testimonials-group {
+      flex-basis: auto;
+      width: max-content;
+    }
+
+    .testimonial-slide {
+      flex: 0 0 min(85vw, 24rem);
+    }
+  }
+</style>
